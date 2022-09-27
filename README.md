@@ -18,6 +18,13 @@ Este repositorio usa classic yarn v1.22.15 [workspaces] (https://classic.yarnpkg
 4. Por cortesía, agregue en su nueva carpeta un archivo `README.md` que explique el propósito de su experimento.
 5. Cuando se complete el experimento. Indique su conclusión en `README.md` y haga git merge el "branch" con "main".
 
+### Como hacer commit messages?
+Queremos establecer reglas sobre cómo  formatear nuestros mensajes de "commit" de git. Esto hace que el historial de mensajes sea mas legible. Consulte la convencion [aquí] (https://www.conventionalcommits.org/en/v1.0.0/#summary). Por convencion, los mensajes de "commit" se haran en ingles y seguiran el siguiente patron:
+
+```
+type(scope?): subject  #scope is optional; multiple scopes are supported (current delimiter options: "/", "\" and ",")
+```
+
 
 ***
 
@@ -41,3 +48,10 @@ This repository uses classic yarn v1.22.15 [workspaces](https://classic.yarnpkg.
 3. Name your folder following naming convention: `00X_your_experiment`.
 4. For courtesy add in your new folder a `README.md` file explaining the purpose of your experiment.
 5. When experiment is complete. Indicate your conclusion in `README.md` and merge branch to main.
+
+### Commit messages
+We want to establish rules over how our git commit messages can be formatted. This leads to more readable messages that are easy to follow when looking through the project history. Check conventions [here](https://www.conventionalcommits.org/en/v1.0.0/#summary). In general the pattern mostly looks like this:
+
+```
+type(scope?): subject  #scope is optional; multiple scopes are supported (current delimiter options: "/", "\" and ",")
+```
