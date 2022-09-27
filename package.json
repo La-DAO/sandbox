@@ -1,0 +1,12 @@
+{
+  "name": "ladao-sandbox",
+  "version": "1.0.0",
+  "description": "Un repo para practicar y aprender",
+  "main": "index.js",
+  "repository": "https://github.com/La-DAO/sandbox",
+  "author": "ladao",
+  "license": "GPL-3.0-or-later",
+  "workspaces": [
+    "packages/*"
+  ]
+}
