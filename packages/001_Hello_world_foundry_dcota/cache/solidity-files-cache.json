@@ -1,0 +1,54 @@
+{
+  "_format": "ethers-rs-sol-cache-3",
+  "paths": {
+    "artifacts": "out",
+    "build_infos": "out/build-info",
+    "sources": "src",
+    "tests": "test",
+    "scripts": "script",
+    "libraries": [
+      "lib"
+    ]
+  },
+  "files": {
+    "src/LigaDeFutbol.sol": {
+      "lastModificationDate": 1664324075477,
+      "contentHash": "f2319e3d6228b846695e730e2033d602",
+      "sourceName": "src/LigaDeFutbol.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs"
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "london",
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": "=0.8.15",
+      "artifacts": {
+        "LigaDeFutbol": {
+          "0.8.15+commit.e14f2714.Linux.gcc": "LigaDeFutbol.sol/LigaDeFutbol.json"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,3 @@
+[submodule "packages/001_Hello_world_foundry_dcota/lib/forge-std"]
+	path = packages/001_Hello_world_foundry_dcota/lib/forge-std
+	url = https://github.com/foundry-rs/forge-std

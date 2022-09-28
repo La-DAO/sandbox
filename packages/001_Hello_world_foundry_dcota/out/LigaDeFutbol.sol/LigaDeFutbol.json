@@ -1,0 +1,2499 @@
+{
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "id",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint64",
+          "name": "fechaDelJuego",
+          "type": "uint64"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "casa",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "visitante",
+          "type": "string"
+        }
+      ],
+      "name": "JuegoCreado",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "cantidad",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "juegoId",
+          "type": "bytes32"
+        }
+      ],
+      "name": "apostar",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "apuestas",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint64",
+          "name": "fechaApuestasAbiertas",
+          "type": "uint64"
+        },
+        {
+          "internalType": "uint64",
+          "name": "fechaApuestasCerradas",
+          "type": "uint64"
+        },
+        {
+          "internalType": "uint64",
+          "name": "fechaDelJuego",
+          "type": "uint64"
+        },
+        {
+          "internalType": "string",
+          "name": "casa",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "visitante",
+          "type": "string"
+        }
+      ],
+      "name": "crearJuego",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "name": "juegos",
+      "outputs": [
+        {
+          "internalType": "uint64",
+          "name": "fechaApuestasAbiertas",
+          "type": "uint64"
+        },
+        {
+          "internalType": "uint64",
+          "name": "fechaApuestasCerradas",
+          "type": "uint64"
+        },
+        {
+          "internalType": "uint64",
+          "name": "fechaDelJuego",
+          "type": "uint64"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "ganador",
+          "type": "bytes32"
+        },
+        {
+          "components": [
+            {
+              "internalType": "bytes32",
+              "name": "nombre",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "uint256",
+              "name": "totalApuestasEquipo",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct LigaDeFutbol.Equipo",
+          "name": "casa",
+          "type": "tuple"
+        },
+        {
+          "components": [
+            {
+              "internalType": "bytes32",
+              "name": "nombre",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "uint256",
+              "name": "totalApuestasEquipo",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct LigaDeFutbol.Equipo",
+          "name": "visitante",
+          "type": "tuple"
+        },
+        {
+          "internalType": "enum LigaDeFutbol.Estatus",
+          "name": "estado",
+          "type": "uint8"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "monedaDeApuesta",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": {
+    "object": "0x608060405234801561001057600080fd5b50610719806100206000396000f3fe608060405234801561001057600080fd5b50600436106100575760003560e01c80630190df851461005c5780633e221c7d146100715780635627bf15146100b557806358dec1b91461014f578063ffca61b21461017a575b600080fd5b61006f61006a366004610426565b61018c565b005b6100a261007f3660046104bc565b600260209081526000938452604080852082529284528284209052825290205481565b6040519081526020015b60405180910390f35b61013c6100c3366004610501565b600160208181526000928352604092839020805492810154845180860186526002830154815260038301548185015285518087019096526004830154865260058301549386019390935260069091015467ffffffffffffffff80851695600160401b8604821695600160801b9004909116939160ff1687565b6040516100ac9796959493929190610552565b600054610162906001600160a01b031681565b6040516001600160a01b0390911681526020016100ac565b61006f6101883660046105bd565b5050565b60208281015182820151604080518082018252838152600081860181905282518084018452848152808701829052835160e08101855267ffffffffffffffff8d811682528c811698820198909852968a1693870193909352606086018190526080860182905260a0860183905260c086018190529394929390929061021082610336565b60008181526001602081815260409283902086518154838901519589015167ffffffffffffffff908116600160801b0267ffffffffffffffff60801b19978216600160401b026fffffffffffffffffffffffffffffffff1990931691909316171794909416939093178355606086015183830155608086015180516002850155810151600384015560a08601518051600480860191909155910151600584015560c086015160068401805495965087959193909260ff199092169184908111156102dc576102dc61051a565b02179055509050508867ffffffffffffffff16817ff5471b5dadcbdf59de68977f30cf3360e5b835c516cd665c4381bfaa2997d6ad8a8a60405161032192919061062c565b60405180910390a35050505050505050505050565b600081604051602001610349919061065a565b604051602081830303815290604052805190602001209050919050565b803567ffffffffffffffff8116811461037e57600080fd5b919050565b634e487b7160e01b600052604160045260246000fd5b600082601f8301126103aa57600080fd5b813567ffffffffffffffff808211156103c5576103c5610383565b604051601f8301601f19908116603f011681019082821181831017156103ed576103ed610383565b8160405283815286602085880101111561040657600080fd5b836020870160208301376000602085830101528094505050505092915050565b600080600080600060a0868803121561043e57600080fd5b61044786610366565b945061045560208701610366565b935061046360408701610366565b9250606086013567ffffffffffffffff8082111561048057600080fd5b61048c89838a01610399565b935060808801359150808211156104a257600080fd5b506104af88828901610399565b9150509295509295909350565b6000806000606084860312156104d157600080fd5b833592506020840135915060408401356001600160a01b03811681146104f657600080fd5b809150509250925092565b60006020828403121561051357600080fd5b5035919050565b634e487b7160e01b600052602160045260246000fd5b6005811061054e57634e487b7160e01b600052602160045260246000fd5b9052565b67ffffffffffffffff8881168252878116602083015286166040820152606081018590526101208101610592608083018680518252602090810151910152565b835160c0830152602084015160e08301526105b1610100830184610530565b98975050505050505050565b600080604083850312156105d057600080fd5b50508035926020909101359150565b6000815180845260005b81811015610605576020818501810151868301820152016105e9565b81811115610617576000602083870101525b50601f01601f19169290920160200192915050565b60408152600061063f60408301856105df565b828103602084015261065181856105df565b95945050505050565b60006101208201905067ffffffffffffffff808451168352806020850151166020840152806040850151166040840152506060830151606083015260808301516106b1608084018280518252602090810151910152565b5060a0830151805160c0840152602081015160e08401525060c08301516106dc610100840182610530565b509291505056fea26469706673582212209ed0e02a427c018fc64c45d64b9b69dcf24699e4103398355ff724a6cb2a430764736f6c634300080f0033",
+    "sourceMap": "64:2167:0:-:0;;;;;;;;;;;;;;;;;;;",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x608060405234801561001057600080fd5b50600436106100575760003560e01c80630190df851461005c5780633e221c7d146100715780635627bf15146100b557806358dec1b91461014f578063ffca61b21461017a575b600080fd5b61006f61006a366004610426565b61018c565b005b6100a261007f3660046104bc565b600260209081526000938452604080852082529284528284209052825290205481565b6040519081526020015b60405180910390f35b61013c6100c3366004610501565b600160208181526000928352604092839020805492810154845180860186526002830154815260038301548185015285518087019096526004830154865260058301549386019390935260069091015467ffffffffffffffff80851695600160401b8604821695600160801b9004909116939160ff1687565b6040516100ac9796959493929190610552565b600054610162906001600160a01b031681565b6040516001600160a01b0390911681526020016100ac565b61006f6101883660046105bd565b5050565b60208281015182820151604080518082018252838152600081860181905282518084018452848152808701829052835160e08101855267ffffffffffffffff8d811682528c811698820198909852968a1693870193909352606086018190526080860182905260a0860183905260c086018190529394929390929061021082610336565b60008181526001602081815260409283902086518154838901519589015167ffffffffffffffff908116600160801b0267ffffffffffffffff60801b19978216600160401b026fffffffffffffffffffffffffffffffff1990931691909316171794909416939093178355606086015183830155608086015180516002850155810151600384015560a08601518051600480860191909155910151600584015560c086015160068401805495965087959193909260ff199092169184908111156102dc576102dc61051a565b02179055509050508867ffffffffffffffff16817ff5471b5dadcbdf59de68977f30cf3360e5b835c516cd665c4381bfaa2997d6ad8a8a60405161032192919061062c565b60405180910390a35050505050505050505050565b600081604051602001610349919061065a565b604051602081830303815290604052805190602001209050919050565b803567ffffffffffffffff8116811461037e57600080fd5b919050565b634e487b7160e01b600052604160045260246000fd5b600082601f8301126103aa57600080fd5b813567ffffffffffffffff808211156103c5576103c5610383565b604051601f8301601f19908116603f011681019082821181831017156103ed576103ed610383565b8160405283815286602085880101111561040657600080fd5b836020870160208301376000602085830101528094505050505092915050565b600080600080600060a0868803121561043e57600080fd5b61044786610366565b945061045560208701610366565b935061046360408701610366565b9250606086013567ffffffffffffffff8082111561048057600080fd5b61048c89838a01610399565b935060808801359150808211156104a257600080fd5b506104af88828901610399565b9150509295509295909350565b6000806000606084860312156104d157600080fd5b833592506020840135915060408401356001600160a01b03811681146104f657600080fd5b809150509250925092565b60006020828403121561051357600080fd5b5035919050565b634e487b7160e01b600052602160045260246000fd5b6005811061054e57634e487b7160e01b600052602160045260246000fd5b9052565b67ffffffffffffffff8881168252878116602083015286166040820152606081018590526101208101610592608083018680518252602090810151910152565b835160c0830152602084015160e08301526105b1610100830184610530565b98975050505050505050565b600080604083850312156105d057600080fd5b50508035926020909101359150565b6000815180845260005b81811015610605576020818501810151868301820152016105e9565b81811115610617576000602083870101525b50601f01601f19169290920160200192915050565b60408152600061063f60408301856105df565b828103602084015261065181856105df565b95945050505050565b60006101208201905067ffffffffffffffff808451168352806020850151166020840152806040850151166040840152506060830151606083015260808301516106b1608084018280518252602090810151910152565b5060a0830151805160c0840152602081015160e08401525060c08301516106dc610100840182610530565b509291505056fea26469706673582212209ed0e02a427c018fc64c45d64b9b69dcf24699e4103398355ff724a6cb2a430764736f6c634300080f0033",
+    "sourceMap": "64:2167:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;919:1092;;;;;;:::i;:::-;;:::i;:::-;;829:83;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2385:25:1;;;2373:2;2358:18;829:83:0;;;;;;;;707:40;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;707:40:0;;;;;-1:-1:-1;;;707:40:0;;;;;;;;;;;;;;;;;;;;;;;;:::i;651:30::-;;;;;-1:-1:-1;;;;;651:30:0;;;;;;-1:-1:-1;;;;;4113:32:1;;;4095:51;;4083:2;4068:18;651:30:0;3949:203:1;2017:82:0;;;;;;:::i;:::-;;;;919:1092;1239:2;1229:13;;;1223:20;1276:18;;;1270:25;1337:81;;;;;;;;;;;-1:-1:-1;1337:81:0;;;;;;1456:86;;;;;;;;;;;;;;;;1574:300;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1223:20;;1270:25;;1337:81;;1574:300;1897:16;1574:300;1897:8;:16::i;:::-;1923:10;;;;:6;:10;;;;;;;;;:19;;;;;;;;;;;;;;;;-1:-1:-1;;;1923:19:0;-1:-1:-1;;;;1923:19:0;;;-1:-1:-1;;;1923:19:0;-1:-1:-1;;1923:19:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1884:29;;-1:-1:-1;1936:6:0;;1923:19;;;;-1:-1:-1;;1923:19:0;;;;;;;;;;;;;:::i;:::-;;;;;;;;;1973:13;1957:47;;1969:2;1957:47;1988:4;1994:9;1957:47;;;;;;;:::i;:::-;;;;;;;;1073:938;;;;;;919:1092;;;;;:::o;2105:124::-;2165:10;2215:5;2204:17;;;;;;;;:::i;:::-;;;;;;;;;;;;;2194:28;;;;;;2187:35;;2105:124;;;:::o;14:171:1:-;81:20;;141:18;130:30;;120:41;;110:69;;175:1;172;165:12;110:69;14:171;;;:::o;190:127::-;251:10;246:3;242:20;239:1;232:31;282:4;279:1;272:15;306:4;303:1;296:15;322:719;365:5;418:3;411:4;403:6;399:17;395:27;385:55;;436:1;433;426:12;385:55;472:6;459:20;498:18;535:2;531;528:10;525:36;;;541:18;;:::i;:::-;616:2;610:9;584:2;670:13;;-1:-1:-1;;666:22:1;;;690:2;662:31;658:40;646:53;;;714:18;;;734:22;;;711:46;708:72;;;760:18;;:::i;:::-;800:10;796:2;789:22;835:2;827:6;820:18;881:3;874:4;869:2;861:6;857:15;853:26;850:35;847:55;;;898:1;895;888:12;847:55;962:2;955:4;947:6;943:17;936:4;928:6;924:17;911:54;1009:1;1002:4;997:2;989:6;985:15;981:26;974:37;1029:6;1020:15;;;;;;322:719;;;;:::o;1046:761::-;1158:6;1166;1174;1182;1190;1243:3;1231:9;1222:7;1218:23;1214:33;1211:53;;;1260:1;1257;1250:12;1211:53;1283:28;1301:9;1283:28;:::i;:::-;1273:38;;1330:37;1363:2;1352:9;1348:18;1330:37;:::i;:::-;1320:47;;1386:37;1419:2;1408:9;1404:18;1386:37;:::i;:::-;1376:47;;1474:2;1463:9;1459:18;1446:32;1497:18;1538:2;1530:6;1527:14;1524:34;;;1554:1;1551;1544:12;1524:34;1577:50;1619:7;1610:6;1599:9;1595:22;1577:50;:::i;:::-;1567:60;;1680:3;1669:9;1665:19;1652:33;1636:49;;1710:2;1700:8;1697:16;1694:36;;;1726:1;1723;1716:12;1694:36;;1749:52;1793:7;1782:8;1771:9;1767:24;1749:52;:::i;:::-;1739:62;;;1046:761;;;;;;;;:::o;1812:422::-;1889:6;1897;1905;1958:2;1946:9;1937:7;1933:23;1929:32;1926:52;;;1974:1;1971;1964:12;1926:52;1997:23;;;-1:-1:-1;2067:2:1;2052:18;;2039:32;;-1:-1:-1;2121:2:1;2106:18;;2093:32;-1:-1:-1;;;;;2154:31:1;;2144:42;;2134:70;;2200:1;2197;2190:12;2134:70;2223:5;2213:15;;;1812:422;;;;;:::o;2421:180::-;2480:6;2533:2;2521:9;2512:7;2508:23;2504:32;2501:52;;;2549:1;2546;2539:12;2501:52;-1:-1:-1;2572:23:1;;2421:180;-1:-1:-1;2421:180:1:o;2758:127::-;2819:10;2814:3;2810:20;2807:1;2800:31;2850:4;2847:1;2840:15;2874:4;2871:1;2864:15;2890:235;2969:1;2962:5;2959:12;2949:143;;3014:10;3009:3;3005:20;3002:1;2995:31;3049:4;3046:1;3039:15;3077:4;3074:1;3067:15;2949:143;3101:18;;2890:235::o;3130:814::-;3545:18;3590:15;;;3572:34;;3642:15;;;3637:2;3622:18;;3615:43;3694:15;;3689:2;3674:18;;3667:43;3741:2;3726:18;;3719:34;;;3522:3;3507:19;;3762:53;3810:3;3795:19;;3787:6;2678:12;;2666:25;;2740:4;2729:16;;;2723:23;2707:14;;2700:47;2606:147;3762:53;2678:12;;3872:3;3857:19;;2666:25;2740:4;2729:16;;2723:23;2707:14;;;2700:47;3886:52;3933:3;3922:9;3918:19;3910:6;3886:52;:::i;:::-;3130:814;;;;;;;;;;:::o;4157:248::-;4225:6;4233;4286:2;4274:9;4265:7;4261:23;4257:32;4254:52;;;4302:1;4299;4292:12;4254:52;-1:-1:-1;;4325:23:1;;;4395:2;4380:18;;;4367:32;;-1:-1:-1;4157:248:1:o;4410:472::-;4452:3;4490:5;4484:12;4517:6;4512:3;4505:19;4542:1;4552:162;4566:6;4563:1;4560:13;4552:162;;;4628:4;4684:13;;;4680:22;;4674:29;4656:11;;;4652:20;;4645:59;4581:12;4552:162;;;4732:6;4729:1;4726:13;4723:87;;;4798:1;4791:4;4782:6;4777:3;4773:16;4769:27;4762:38;4723:87;-1:-1:-1;4864:2:1;4843:15;-1:-1:-1;;4839:29:1;4830:39;;;;4871:4;4826:50;;4410:472;-1:-1:-1;;4410:472:1:o;4887:383::-;5084:2;5073:9;5066:21;5047:4;5110:45;5151:2;5140:9;5136:18;5128:6;5110:45;:::i;:::-;5203:9;5195:6;5191:22;5186:2;5175:9;5171:18;5164:50;5231:33;5257:6;5249;5231:33;:::i;:::-;5223:41;4887:383;-1:-1:-1;;;;;4887:383:1:o;5275:855::-;5409:4;5451:3;5440:9;5436:19;5428:27;;5474:18;5538:2;5529:6;5523:13;5519:22;5508:9;5501:41;5610:2;5602:4;5594:6;5590:17;5584:24;5580:33;5573:4;5562:9;5558:20;5551:63;5682:2;5674:4;5666:6;5662:17;5656:24;5652:33;5645:4;5634:9;5630:20;5623:63;;5742:4;5734:6;5730:17;5724:24;5717:4;5706:9;5702:20;5695:54;5796:4;5788:6;5784:17;5778:24;5811:60;5865:4;5854:9;5850:20;5836:12;2678;;2666:25;;2740:4;2729:16;;;2723:23;2707:14;;2700:47;2606:147;5811:60;-1:-1:-1;5920:4:1;5908:17;;5902:24;2678:12;;5991:4;5976:20;;2666:25;2740:4;2729:16;;2723:23;2707:14;;;2700:47;5935:62;6046:4;6038:6;6034:17;6028:24;6061:63;6116:6;6105:9;6101:22;6085:14;6061:63;:::i;:::-;;5275:855;;;;:::o",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {
+    "apostar(uint256,bytes32)": "ffca61b2",
+    "apuestas(bytes32,bytes32,address)": "3e221c7d",
+    "crearJuego(uint64,uint64,uint64,string,string)": "0190df85",
+    "juegos(bytes32)": "5627bf15",
+    "monedaDeApuesta()": "58dec1b9"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.15+commit.e14f2714\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"id\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"uint64\",\"name\":\"fechaDelJuego\",\"type\":\"uint64\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"casa\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"visitante\",\"type\":\"string\"}],\"name\":\"JuegoCreado\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"cantidad\",\"type\":\"uint256\"},{\"internalType\":\"bytes32\",\"name\":\"juegoId\",\"type\":\"bytes32\"}],\"name\":\"apostar\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"apuestas\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint64\",\"name\":\"fechaApuestasAbiertas\",\"type\":\"uint64\"},{\"internalType\":\"uint64\",\"name\":\"fechaApuestasCerradas\",\"type\":\"uint64\"},{\"internalType\":\"uint64\",\"name\":\"fechaDelJuego\",\"type\":\"uint64\"},{\"internalType\":\"string\",\"name\":\"casa\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"visitante\",\"type\":\"string\"}],\"name\":\"crearJuego\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"name\":\"juegos\",\"outputs\":[{\"internalType\":\"uint64\",\"name\":\"fechaApuestasAbiertas\",\"type\":\"uint64\"},{\"internalType\":\"uint64\",\"name\":\"fechaApuestasCerradas\",\"type\":\"uint64\"},{\"internalType\":\"uint64\",\"name\":\"fechaDelJuego\",\"type\":\"uint64\"},{\"internalType\":\"bytes32\",\"name\":\"ganador\",\"type\":\"bytes32\"},{\"components\":[{\"internalType\":\"bytes32\",\"name\":\"nombre\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"totalApuestasEquipo\",\"type\":\"uint256\"}],\"internalType\":\"struct LigaDeFutbol.Equipo\",\"name\":\"casa\",\"type\":\"tuple\"},{\"components\":[{\"internalType\":\"bytes32\",\"name\":\"nombre\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"totalApuestasEquipo\",\"type\":\"uint256\"}],\"internalType\":\"struct LigaDeFutbol.Equipo\",\"name\":\"visitante\",\"type\":\"tuple\"},{\"internalType\":\"enum LigaDeFutbol.Estatus\",\"name\":\"estado\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"monedaDeApuesta\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/LigaDeFutbol.sol\":\"LigaDeFutbol\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":forge-std/=lib/forge-std/src/\"]},\"sources\":{\"src/LigaDeFutbol.sol\":{\"keccak256\":\"0x7ff2f25007e781f4b81b27c20ac0efd867dd6ae62b708f96582dd225b873f682\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://36da043dcc56e15a1af0d920aaa31841ad18c43f15c3c2df4572a3c2edd316ab\",\"dweb:/ipfs/QmXV6WnUw4yro7nNQpyGiAbxzVzf7bM6PZURs8deSAZKmK\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.15+commit.e14f2714"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "bytes32",
+              "name": "id",
+              "type": "bytes32",
+              "indexed": true
+            },
+            {
+              "internalType": "uint64",
+              "name": "fechaDelJuego",
+              "type": "uint64",
+              "indexed": true
+            },
+            {
+              "internalType": "string",
+              "name": "casa",
+              "type": "string",
+              "indexed": false
+            },
+            {
+              "internalType": "string",
+              "name": "visitante",
+              "type": "string",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "JuegoCreado",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "cantidad",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "juegoId",
+              "type": "bytes32"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "apostar"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "bytes32",
+              "name": "",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "address",
+              "name": "",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "apuestas",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint64",
+              "name": "fechaApuestasAbiertas",
+              "type": "uint64"
+            },
+            {
+              "internalType": "uint64",
+              "name": "fechaApuestasCerradas",
+              "type": "uint64"
+            },
+            {
+              "internalType": "uint64",
+              "name": "fechaDelJuego",
+              "type": "uint64"
+            },
+            {
+              "internalType": "string",
+              "name": "casa",
+              "type": "string"
+            },
+            {
+              "internalType": "string",
+              "name": "visitante",
+              "type": "string"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "crearJuego"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "bytes32",
+              "name": "",
+              "type": "bytes32"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "juegos",
+          "outputs": [
+            {
+              "internalType": "uint64",
+              "name": "fechaApuestasAbiertas",
+              "type": "uint64"
+            },
+            {
+              "internalType": "uint64",
+              "name": "fechaApuestasCerradas",
+              "type": "uint64"
+            },
+            {
+              "internalType": "uint64",
+              "name": "fechaDelJuego",
+              "type": "uint64"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "ganador",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "struct LigaDeFutbol.Equipo",
+              "name": "casa",
+              "type": "tuple",
+              "components": [
+                {
+                  "internalType": "bytes32",
+                  "name": "nombre",
+                  "type": "bytes32"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "totalApuestasEquipo",
+                  "type": "uint256"
+                }
+              ]
+            },
+            {
+              "internalType": "struct LigaDeFutbol.Equipo",
+              "name": "visitante",
+              "type": "tuple",
+              "components": [
+                {
+                  "internalType": "bytes32",
+                  "name": "nombre",
+                  "type": "bytes32"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "totalApuestasEquipo",
+                  "type": "uint256"
+                }
+              ]
+            },
+            {
+              "internalType": "enum LigaDeFutbol.Estatus",
+              "name": "estado",
+              "type": "uint8"
+            }
+          ]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "monedaDeApuesta",
+          "outputs": [
+            {
+              "internalType": "address",
+              "name": "",
+              "type": "address"
+            }
+          ]
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {},
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {},
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        ":ds-test/=lib/forge-std/lib/ds-test/src/",
+        ":forge-std/=lib/forge-std/src/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "metadata": {
+        "bytecodeHash": "ipfs"
+      },
+      "compilationTarget": {
+        "src/LigaDeFutbol.sol": "LigaDeFutbol"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "src/LigaDeFutbol.sol": {
+        "keccak256": "0x7ff2f25007e781f4b81b27c20ac0efd867dd6ae62b708f96582dd225b873f682",
+        "urls": [
+          "bzz-raw://36da043dcc56e15a1af0d920aaa31841ad18c43f15c3c2df4572a3c2edd316ab",
+          "dweb:/ipfs/QmXV6WnUw4yro7nNQpyGiAbxzVzf7bM6PZURs8deSAZKmK"
+        ],
+        "license": "UNLICENSED"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "src/LigaDeFutbol.sol",
+    "id": 151,
+    "exportedSymbols": {
+      "LigaDeFutbol": [
+        150
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "39:2193:0",
+    "nodes": [
+      {
+        "id": 1,
+        "nodeType": "PragmaDirective",
+        "src": "39:23:0",
+        "literals": [
+          "solidity",
+          "0.8",
+          ".15"
+        ]
+      },
+      {
+        "id": 150,
+        "nodeType": "ContractDefinition",
+        "src": "64:2167:0",
+        "nodes": [
+          {
+            "id": 11,
+            "nodeType": "EventDefinition",
+            "src": "93:99:0",
+            "anonymous": false,
+            "eventSelector": "f5471b5dadcbdf59de68977f30cf3360e5b835c516cd665c4381bfaa2997d6ad",
+            "name": "JuegoCreado",
+            "nameLocation": "99:11:0",
+            "parameters": {
+              "id": 10,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "id",
+                  "nameLocation": "127:2:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11,
+                  "src": "111:18:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 2,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "111:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "fechaDelJuego",
+                  "nameLocation": "146:13:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11,
+                  "src": "131:28:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  },
+                  "typeName": {
+                    "id": 4,
+                    "name": "uint64",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "131:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint64",
+                      "typeString": "uint64"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "casa",
+                  "nameLocation": "168:4:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11,
+                  "src": "161:11:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 6,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "161:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 9,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "visitante",
+                  "nameLocation": "181:9:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11,
+                  "src": "174:16:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 8,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "174:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "110:81:0"
+            }
+          },
+          {
+            "id": 16,
+            "nodeType": "StructDefinition",
+            "src": "198:82:0",
+            "canonicalName": "LigaDeFutbol.Equipo",
+            "members": [
+              {
+                "constant": false,
+                "id": 13,
+                "mutability": "mutable",
+                "name": "nombre",
+                "nameLocation": "230:6:0",
+                "nodeType": "VariableDeclaration",
+                "scope": 16,
+                "src": "222:14:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                },
+                "typeName": {
+                  "id": 12,
+                  "name": "bytes32",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "222:7:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 15,
+                "mutability": "mutable",
+                "name": "totalApuestasEquipo",
+                "nameLocation": "254:19:0",
+                "nodeType": "VariableDeclaration",
+                "scope": 16,
+                "src": "246:27:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 14,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "246:7:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "Equipo",
+            "nameLocation": "205:6:0",
+            "scope": 150,
+            "visibility": "public"
+          },
+          {
+            "id": 34,
+            "nodeType": "StructDefinition",
+            "src": "286:222:0",
+            "canonicalName": "LigaDeFutbol.Juego",
+            "members": [
+              {
+                "constant": false,
+                "id": 18,
+                "mutability": "mutable",
+                "name": "fechaApuestasAbiertas",
+                "nameLocation": "316:21:0",
+                "nodeType": "VariableDeclaration",
+                "scope": 34,
+                "src": "309:28:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint64",
+                  "typeString": "uint64"
+                },
+                "typeName": {
+                  "id": 17,
+                  "name": "uint64",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "309:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 20,
+                "mutability": "mutable",
+                "name": "fechaApuestasCerradas",
+                "nameLocation": "354:21:0",
+                "nodeType": "VariableDeclaration",
+                "scope": 34,
+                "src": "347:28:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint64",
+                  "typeString": "uint64"
+                },
+                "typeName": {
+                  "id": 19,
+                  "name": "uint64",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "347:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 22,
+                "mutability": "mutable",
+                "name": "fechaDelJuego",
+                "nameLocation": "392:13:0",
+                "nodeType": "VariableDeclaration",
+                "scope": 34,
+                "src": "385:20:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint64",
+                  "typeString": "uint64"
+                },
+                "typeName": {
+                  "id": 21,
+                  "name": "uint64",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "385:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 24,
+                "mutability": "mutable",
+                "name": "ganador",
+                "nameLocation": "423:7:0",
+                "nodeType": "VariableDeclaration",
+                "scope": 34,
+                "src": "415:15:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                },
+                "typeName": {
+                  "id": 23,
+                  "name": "bytes32",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "415:7:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 27,
+                "mutability": "mutable",
+                "name": "casa",
+                "nameLocation": "447:4:0",
+                "nodeType": "VariableDeclaration",
+                "scope": 34,
+                "src": "440:11:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Equipo_$16_storage_ptr",
+                  "typeString": "struct LigaDeFutbol.Equipo"
+                },
+                "typeName": {
+                  "id": 26,
+                  "nodeType": "UserDefinedTypeName",
+                  "pathNode": {
+                    "id": 25,
+                    "name": "Equipo",
+                    "nodeType": "IdentifierPath",
+                    "referencedDeclaration": 16,
+                    "src": "440:6:0"
+                  },
+                  "referencedDeclaration": 16,
+                  "src": "440:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_Equipo_$16_storage_ptr",
+                    "typeString": "struct LigaDeFutbol.Equipo"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 30,
+                "mutability": "mutable",
+                "name": "visitante",
+                "nameLocation": "468:9:0",
+                "nodeType": "VariableDeclaration",
+                "scope": 34,
+                "src": "461:16:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Equipo_$16_storage_ptr",
+                  "typeString": "struct LigaDeFutbol.Equipo"
+                },
+                "typeName": {
+                  "id": 29,
+                  "nodeType": "UserDefinedTypeName",
+                  "pathNode": {
+                    "id": 28,
+                    "name": "Equipo",
+                    "nodeType": "IdentifierPath",
+                    "referencedDeclaration": 16,
+                    "src": "461:6:0"
+                  },
+                  "referencedDeclaration": 16,
+                  "src": "461:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_Equipo_$16_storage_ptr",
+                    "typeString": "struct LigaDeFutbol.Equipo"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 33,
+                "mutability": "mutable",
+                "name": "estado",
+                "nameLocation": "495:6:0",
+                "nodeType": "VariableDeclaration",
+                "scope": 34,
+                "src": "487:14:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_enum$_Estatus_$40",
+                  "typeString": "enum LigaDeFutbol.Estatus"
+                },
+                "typeName": {
+                  "id": 32,
+                  "nodeType": "UserDefinedTypeName",
+                  "pathNode": {
+                    "id": 31,
+                    "name": "Estatus",
+                    "nodeType": "IdentifierPath",
+                    "referencedDeclaration": 40,
+                    "src": "487:7:0"
+                  },
+                  "referencedDeclaration": 40,
+                  "src": "487:7:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_Estatus_$40",
+                    "typeString": "enum LigaDeFutbol.Estatus"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "Juego",
+            "nameLocation": "293:5:0",
+            "scope": 150,
+            "visibility": "public"
+          },
+          {
+            "id": 40,
+            "nodeType": "EnumDefinition",
+            "src": "514:131:0",
+            "canonicalName": "LigaDeFutbol.Estatus",
+            "members": [
+              {
+                "id": 35,
+                "name": "Creado",
+                "nameLocation": "537:6:0",
+                "nodeType": "EnumValue",
+                "src": "537:6:0"
+              },
+              {
+                "id": 36,
+                "name": "ApuestasAbiertas",
+                "nameLocation": "554:16:0",
+                "nodeType": "EnumValue",
+                "src": "554:16:0"
+              },
+              {
+                "id": 37,
+                "name": "ApuestasCerradas",
+                "nameLocation": "580:16:0",
+                "nodeType": "EnumValue",
+                "src": "580:16:0"
+              },
+              {
+                "id": 38,
+                "name": "JuegoPendiente",
+                "nameLocation": "606:14:0",
+                "nodeType": "EnumValue",
+                "src": "606:14:0"
+              },
+              {
+                "id": 39,
+                "name": "Terminado",
+                "nameLocation": "630:9:0",
+                "nodeType": "EnumValue",
+                "src": "630:9:0"
+              }
+            ],
+            "name": "Estatus",
+            "nameLocation": "519:7:0"
+          },
+          {
+            "id": 42,
+            "nodeType": "VariableDeclaration",
+            "src": "651:30:0",
+            "constant": false,
+            "functionSelector": "58dec1b9",
+            "mutability": "mutable",
+            "name": "monedaDeApuesta",
+            "nameLocation": "666:15:0",
+            "scope": 150,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 41,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "651:7:0",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "visibility": "public"
+          },
+          {
+            "id": 47,
+            "nodeType": "VariableDeclaration",
+            "src": "707:40:0",
+            "constant": false,
+            "functionSelector": "5627bf15",
+            "mutability": "mutable",
+            "name": "juegos",
+            "nameLocation": "741:6:0",
+            "scope": 150,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_Juego_$34_storage_$",
+              "typeString": "mapping(bytes32 => struct LigaDeFutbol.Juego)"
+            },
+            "typeName": {
+              "id": 46,
+              "keyType": {
+                "id": 43,
+                "name": "bytes32",
+                "nodeType": "ElementaryTypeName",
+                "src": "716:7:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "707:26:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_Juego_$34_storage_$",
+                "typeString": "mapping(bytes32 => struct LigaDeFutbol.Juego)"
+              },
+              "valueType": {
+                "id": 45,
+                "nodeType": "UserDefinedTypeName",
+                "pathNode": {
+                  "id": 44,
+                  "name": "Juego",
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 34,
+                  "src": "727:5:0"
+                },
+                "referencedDeclaration": 34,
+                "src": "727:5:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Juego_$34_storage_ptr",
+                  "typeString": "struct LigaDeFutbol.Juego"
+                }
+              }
+            },
+            "visibility": "public"
+          },
+          {
+            "id": 55,
+            "nodeType": "VariableDeclaration",
+            "src": "829:83:0",
+            "constant": false,
+            "functionSelector": "3e221c7d",
+            "mutability": "mutable",
+            "name": "apuestas",
+            "nameLocation": "904:8:0",
+            "scope": 150,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_bytes32_$_t_mapping$_t_bytes32_$_t_mapping$_t_address_$_t_uint256_$_$_$",
+              "typeString": "mapping(bytes32 => mapping(bytes32 => mapping(address => uint256)))"
+            },
+            "typeName": {
+              "id": 54,
+              "keyType": {
+                "id": 48,
+                "name": "bytes32",
+                "nodeType": "ElementaryTypeName",
+                "src": "837:7:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "829:67:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_bytes32_$_t_mapping$_t_bytes32_$_t_mapping$_t_address_$_t_uint256_$_$_$",
+                "typeString": "mapping(bytes32 => mapping(bytes32 => mapping(address => uint256)))"
+              },
+              "valueType": {
+                "id": 53,
+                "keyType": {
+                  "id": 49,
+                  "name": "bytes32",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "856:7:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  }
+                },
+                "nodeType": "Mapping",
+                "src": "848:47:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_mapping$_t_bytes32_$_t_mapping$_t_address_$_t_uint256_$_$",
+                  "typeString": "mapping(bytes32 => mapping(address => uint256))"
+                },
+                "valueType": {
+                  "id": 52,
+                  "keyType": {
+                    "id": 50,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "875:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "nodeType": "Mapping",
+                  "src": "867:27:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+                    "typeString": "mapping(address => uint256)"
+                  },
+                  "valueType": {
+                    "id": 51,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "886:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  }
+                }
+              }
+            },
+            "visibility": "public"
+          },
+          {
+            "id": 125,
+            "nodeType": "FunctionDefinition",
+            "src": "919:1092:0",
+            "body": {
+              "id": 124,
+              "nodeType": "Block",
+              "src": "1073:938:0",
+              "statements": [
+                {
+                  "assignments": [
+                    69
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 69,
+                      "mutability": "mutable",
+                      "name": "_casa",
+                      "nameLocation": "1091:5:0",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 124,
+                      "src": "1083:13:0",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      },
+                      "typeName": {
+                        "id": 68,
+                        "name": "bytes32",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "1083:7:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 70,
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1083:13:0"
+                },
+                {
+                  "assignments": [
+                    72
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 72,
+                      "mutability": "mutable",
+                      "name": "_visitante",
+                      "nameLocation": "1114:10:0",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 124,
+                      "src": "1106:18:0",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      },
+                      "typeName": {
+                        "id": 71,
+                        "name": "bytes32",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "1106:7:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 73,
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1106:18:0"
+                },
+                {
+                  "AST": {
+                    "nodeType": "YulBlock",
+                    "src": "1200:105:0",
+                    "statements": [
+                      {
+                        "nodeType": "YulAssignment",
+                        "src": "1214:29:0",
+                        "value": {
+                          "arguments": [
+                            {
+                              "arguments": [
+                                {
+                                  "name": "casa",
+                                  "nodeType": "YulIdentifier",
+                                  "src": "1233:4:0"
+                                },
+                                {
+                                  "kind": "number",
+                                  "nodeType": "YulLiteral",
+                                  "src": "1239:2:0",
+                                  "type": "",
+                                  "value": "32"
+                                }
+                              ],
+                              "functionName": {
+                                "name": "add",
+                                "nodeType": "YulIdentifier",
+                                "src": "1229:3:0"
+                              },
+                              "nodeType": "YulFunctionCall",
+                              "src": "1229:13:0"
+                            }
+                          ],
+                          "functionName": {
+                            "name": "mload",
+                            "nodeType": "YulIdentifier",
+                            "src": "1223:5:0"
+                          },
+                          "nodeType": "YulFunctionCall",
+                          "src": "1223:20:0"
+                        },
+                        "variableNames": [
+                          {
+                            "name": "_casa",
+                            "nodeType": "YulIdentifier",
+                            "src": "1214:5:0"
+                          }
+                        ]
+                      },
+                      {
+                        "nodeType": "YulAssignment",
+                        "src": "1256:39:0",
+                        "value": {
+                          "arguments": [
+                            {
+                              "arguments": [
+                                {
+                                  "name": "visitante",
+                                  "nodeType": "YulIdentifier",
+                                  "src": "1280:9:0"
+                                },
+                                {
+                                  "kind": "number",
+                                  "nodeType": "YulLiteral",
+                                  "src": "1291:2:0",
+                                  "type": "",
+                                  "value": "32"
+                                }
+                              ],
+                              "functionName": {
+                                "name": "add",
+                                "nodeType": "YulIdentifier",
+                                "src": "1276:3:0"
+                              },
+                              "nodeType": "YulFunctionCall",
+                              "src": "1276:18:0"
+                            }
+                          ],
+                          "functionName": {
+                            "name": "mload",
+                            "nodeType": "YulIdentifier",
+                            "src": "1270:5:0"
+                          },
+                          "nodeType": "YulFunctionCall",
+                          "src": "1270:25:0"
+                        },
+                        "variableNames": [
+                          {
+                            "name": "_visitante",
+                            "nodeType": "YulIdentifier",
+                            "src": "1256:10:0"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "evmVersion": "london",
+                  "externalReferences": [
+                    {
+                      "declaration": 69,
+                      "isOffset": false,
+                      "isSlot": false,
+                      "src": "1214:5:0",
+                      "valueSize": 1
+                    },
+                    {
+                      "declaration": 72,
+                      "isOffset": false,
+                      "isSlot": false,
+                      "src": "1256:10:0",
+                      "valueSize": 1
+                    },
+                    {
+                      "declaration": 63,
+                      "isOffset": false,
+                      "isSlot": false,
+                      "src": "1233:4:0",
+                      "valueSize": 1
+                    },
+                    {
+                      "declaration": 65,
+                      "isOffset": false,
+                      "isSlot": false,
+                      "src": "1280:9:0",
+                      "valueSize": 1
+                    }
+                  ],
+                  "id": 74,
+                  "nodeType": "InlineAssembly",
+                  "src": "1191:114:0"
+                },
+                {
+                  "assignments": [
+                    77
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 77,
+                      "mutability": "mutable",
+                      "name": "_Ecasa",
+                      "nameLocation": "1328:6:0",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 124,
+                      "src": "1314:20:0",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Equipo_$16_memory_ptr",
+                        "typeString": "struct LigaDeFutbol.Equipo"
+                      },
+                      "typeName": {
+                        "id": 76,
+                        "nodeType": "UserDefinedTypeName",
+                        "pathNode": {
+                          "id": 75,
+                          "name": "Equipo",
+                          "nodeType": "IdentifierPath",
+                          "referencedDeclaration": 16,
+                          "src": "1314:6:0"
+                        },
+                        "referencedDeclaration": 16,
+                        "src": "1314:6:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Equipo_$16_storage_ptr",
+                          "typeString": "struct LigaDeFutbol.Equipo"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 82,
+                  "initialValue": {
+                    "arguments": [
+                      {
+                        "id": 79,
+                        "name": "_casa",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 69,
+                        "src": "1366:5:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      },
+                      {
+                        "hexValue": "30",
+                        "id": 80,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "number",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1406:1:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_rational_0_by_1",
+                          "typeString": "int_const 0"
+                        },
+                        "value": "0"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        },
+                        {
+                          "typeIdentifier": "t_rational_0_by_1",
+                          "typeString": "int_const 0"
+                        }
+                      ],
+                      "id": 78,
+                      "name": "Equipo",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 16,
+                      "src": "1337:6:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_struct$_Equipo_$16_storage_ptr_$",
+                        "typeString": "type(struct LigaDeFutbol.Equipo storage pointer)"
+                      }
+                    },
+                    "id": 81,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "structConstructorCall",
+                    "lValueRequested": false,
+                    "names": [
+                      "nombre",
+                      "totalApuestasEquipo"
+                    ],
+                    "nodeType": "FunctionCall",
+                    "src": "1337:81:0",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Equipo_$16_memory_ptr",
+                      "typeString": "struct LigaDeFutbol.Equipo memory"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1314:104:0"
+                },
+                {
+                  "assignments": [
+                    85
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 85,
+                      "mutability": "mutable",
+                      "name": "_Evisitante",
+                      "nameLocation": "1442:11:0",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 124,
+                      "src": "1428:25:0",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Equipo_$16_memory_ptr",
+                        "typeString": "struct LigaDeFutbol.Equipo"
+                      },
+                      "typeName": {
+                        "id": 84,
+                        "nodeType": "UserDefinedTypeName",
+                        "pathNode": {
+                          "id": 83,
+                          "name": "Equipo",
+                          "nodeType": "IdentifierPath",
+                          "referencedDeclaration": 16,
+                          "src": "1428:6:0"
+                        },
+                        "referencedDeclaration": 16,
+                        "src": "1428:6:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Equipo_$16_storage_ptr",
+                          "typeString": "struct LigaDeFutbol.Equipo"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 90,
+                  "initialValue": {
+                    "arguments": [
+                      {
+                        "id": 87,
+                        "name": "_visitante",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 72,
+                        "src": "1485:10:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      },
+                      {
+                        "hexValue": "30",
+                        "id": 88,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "number",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1530:1:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_rational_0_by_1",
+                          "typeString": "int_const 0"
+                        },
+                        "value": "0"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        },
+                        {
+                          "typeIdentifier": "t_rational_0_by_1",
+                          "typeString": "int_const 0"
+                        }
+                      ],
+                      "id": 86,
+                      "name": "Equipo",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 16,
+                      "src": "1456:6:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_struct$_Equipo_$16_storage_ptr_$",
+                        "typeString": "type(struct LigaDeFutbol.Equipo storage pointer)"
+                      }
+                    },
+                    "id": 89,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "structConstructorCall",
+                    "lValueRequested": false,
+                    "names": [
+                      "nombre",
+                      "totalApuestasEquipo"
+                    ],
+                    "nodeType": "FunctionCall",
+                    "src": "1456:86:0",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Equipo_$16_memory_ptr",
+                      "typeString": "struct LigaDeFutbol.Equipo memory"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1428:114:0"
+                },
+                {
+                  "assignments": [
+                    93
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 93,
+                      "mutability": "mutable",
+                      "name": "_juego",
+                      "nameLocation": "1565:6:0",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 124,
+                      "src": "1552:19:0",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Juego_$34_memory_ptr",
+                        "typeString": "struct LigaDeFutbol.Juego"
+                      },
+                      "typeName": {
+                        "id": 92,
+                        "nodeType": "UserDefinedTypeName",
+                        "pathNode": {
+                          "id": 91,
+                          "name": "Juego",
+                          "nodeType": "IdentifierPath",
+                          "referencedDeclaration": 34,
+                          "src": "1552:5:0"
+                        },
+                        "referencedDeclaration": 34,
+                        "src": "1552:5:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Juego_$34_storage_ptr",
+                          "typeString": "struct LigaDeFutbol.Juego"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 104,
+                  "initialValue": {
+                    "arguments": [
+                      {
+                        "id": 95,
+                        "name": "fechaApuestasAbiertas",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 57,
+                        "src": "1617:21:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint64",
+                          "typeString": "uint64"
+                        }
+                      },
+                      {
+                        "id": 96,
+                        "name": "fechaApuestasCerradas",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 59,
+                        "src": "1675:21:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint64",
+                          "typeString": "uint64"
+                        }
+                      },
+                      {
+                        "id": 97,
+                        "name": "fechaDelJuego",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 61,
+                        "src": "1725:13:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint64",
+                          "typeString": "uint64"
+                        }
+                      },
+                      {
+                        "hexValue": "30783030",
+                        "id": 98,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "number",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1761:4:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_rational_0_by_1",
+                          "typeString": "int_const 0"
+                        },
+                        "value": "0x00"
+                      },
+                      {
+                        "id": 99,
+                        "name": "_Ecasa",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 77,
+                        "src": "1785:6:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Equipo_$16_memory_ptr",
+                          "typeString": "struct LigaDeFutbol.Equipo memory"
+                        }
+                      },
+                      {
+                        "id": 100,
+                        "name": "_Evisitante",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 85,
+                        "src": "1816:11:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Equipo_$16_memory_ptr",
+                          "typeString": "struct LigaDeFutbol.Equipo memory"
+                        }
+                      },
+                      {
+                        "expression": {
+                          "id": 101,
+                          "name": "Estatus",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 40,
+                          "src": "1849:7:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_enum$_Estatus_$40_$",
+                            "typeString": "type(enum LigaDeFutbol.Estatus)"
+                          }
+                        },
+                        "id": 102,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "memberName": "Creado",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 35,
+                        "src": "1849:14:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_enum$_Estatus_$40",
+                          "typeString": "enum LigaDeFutbol.Estatus"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint64",
+                          "typeString": "uint64"
+                        },
+                        {
+                          "typeIdentifier": "t_uint64",
+                          "typeString": "uint64"
+                        },
+                        {
+                          "typeIdentifier": "t_uint64",
+                          "typeString": "uint64"
+                        },
+                        {
+                          "typeIdentifier": "t_rational_0_by_1",
+                          "typeString": "int_const 0"
+                        },
+                        {
+                          "typeIdentifier": "t_struct$_Equipo_$16_memory_ptr",
+                          "typeString": "struct LigaDeFutbol.Equipo memory"
+                        },
+                        {
+                          "typeIdentifier": "t_struct$_Equipo_$16_memory_ptr",
+                          "typeString": "struct LigaDeFutbol.Equipo memory"
+                        },
+                        {
+                          "typeIdentifier": "t_enum$_Estatus_$40",
+                          "typeString": "enum LigaDeFutbol.Estatus"
+                        }
+                      ],
+                      "id": 94,
+                      "name": "Juego",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 34,
+                      "src": "1574:5:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_struct$_Juego_$34_storage_ptr_$",
+                        "typeString": "type(struct LigaDeFutbol.Juego storage pointer)"
+                      }
+                    },
+                    "id": 103,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "structConstructorCall",
+                    "lValueRequested": false,
+                    "names": [
+                      "fechaApuestasAbiertas",
+                      "fechaApuestasCerradas",
+                      "fechaDelJuego",
+                      "ganador",
+                      "casa",
+                      "visitante",
+                      "estado"
+                    ],
+                    "nodeType": "FunctionCall",
+                    "src": "1574:300:0",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Juego_$34_memory_ptr",
+                      "typeString": "struct LigaDeFutbol.Juego memory"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1552:322:0"
+                },
+                {
+                  "assignments": [
+                    106
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 106,
+                      "mutability": "mutable",
+                      "name": "id",
+                      "nameLocation": "1892:2:0",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 124,
+                      "src": "1884:10:0",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      },
+                      "typeName": {
+                        "id": 105,
+                        "name": "bytes32",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "1884:7:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 110,
+                  "initialValue": {
+                    "arguments": [
+                      {
+                        "id": 108,
+                        "name": "_juego",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 93,
+                        "src": "1906:6:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Juego_$34_memory_ptr",
+                          "typeString": "struct LigaDeFutbol.Juego memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_struct$_Juego_$34_memory_ptr",
+                          "typeString": "struct LigaDeFutbol.Juego memory"
+                        }
+                      ],
+                      "id": 107,
+                      "name": "_crearId",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 149,
+                      "src": "1897:8:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_pure$_t_struct$_Juego_$34_memory_ptr_$returns$_t_bytes32_$",
+                        "typeString": "function (struct LigaDeFutbol.Juego memory) pure returns (bytes32)"
+                      }
+                    },
+                    "id": 109,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1897:16:0",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1884:29:0"
+                },
+                {
+                  "expression": {
+                    "id": 115,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "baseExpression": {
+                        "id": 111,
+                        "name": "juegos",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 47,
+                        "src": "1923:6:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_Juego_$34_storage_$",
+                          "typeString": "mapping(bytes32 => struct LigaDeFutbol.Juego storage ref)"
+                        }
+                      },
+                      "id": 113,
+                      "indexExpression": {
+                        "id": 112,
+                        "name": "id",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 106,
+                        "src": "1930:2:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "1923:10:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Juego_$34_storage",
+                        "typeString": "struct LigaDeFutbol.Juego storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "id": 114,
+                      "name": "_juego",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 93,
+                      "src": "1936:6:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Juego_$34_memory_ptr",
+                        "typeString": "struct LigaDeFutbol.Juego memory"
+                      }
+                    },
+                    "src": "1923:19:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Juego_$34_storage",
+                      "typeString": "struct LigaDeFutbol.Juego storage ref"
+                    }
+                  },
+                  "id": 116,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1923:19:0"
+                },
+                {
+                  "eventCall": {
+                    "arguments": [
+                      {
+                        "id": 118,
+                        "name": "id",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 106,
+                        "src": "1969:2:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      },
+                      {
+                        "id": 119,
+                        "name": "fechaDelJuego",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 61,
+                        "src": "1973:13:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint64",
+                          "typeString": "uint64"
+                        }
+                      },
+                      {
+                        "id": 120,
+                        "name": "casa",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 63,
+                        "src": "1988:4:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      },
+                      {
+                        "id": 121,
+                        "name": "visitante",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 65,
+                        "src": "1994:9:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        },
+                        {
+                          "typeIdentifier": "t_uint64",
+                          "typeString": "uint64"
+                        },
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        },
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      ],
+                      "id": 117,
+                      "name": "JuegoCreado",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 11,
+                      "src": "1957:11:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_bytes32_$_t_uint64_$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bytes32,uint64,string memory,string memory)"
+                      }
+                    },
+                    "id": 122,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1957:47:0",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 123,
+                  "nodeType": "EmitStatement",
+                  "src": "1952:52:0"
+                }
+              ]
+            },
+            "functionSelector": "0190df85",
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "crearJuego",
+            "nameLocation": "928:10:0",
+            "parameters": {
+              "id": 66,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 57,
+                  "mutability": "mutable",
+                  "name": "fechaApuestasAbiertas",
+                  "nameLocation": "946:21:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 125,
+                  "src": "939:28:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  },
+                  "typeName": {
+                    "id": 56,
+                    "name": "uint64",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "939:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint64",
+                      "typeString": "uint64"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 59,
+                  "mutability": "mutable",
+                  "name": "fechaApuestasCerradas",
+                  "nameLocation": "976:21:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 125,
+                  "src": "969:28:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  },
+                  "typeName": {
+                    "id": 58,
+                    "name": "uint64",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "969:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint64",
+                      "typeString": "uint64"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 61,
+                  "mutability": "mutable",
+                  "name": "fechaDelJuego",
+                  "nameLocation": "1006:13:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 125,
+                  "src": "999:20:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  },
+                  "typeName": {
+                    "id": 60,
+                    "name": "uint64",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "999:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint64",
+                      "typeString": "uint64"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 63,
+                  "mutability": "mutable",
+                  "name": "casa",
+                  "nameLocation": "1035:4:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 125,
+                  "src": "1021:18:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 62,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1021:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 65,
+                  "mutability": "mutable",
+                  "name": "visitante",
+                  "nameLocation": "1055:9:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 125,
+                  "src": "1041:23:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 64,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1041:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "938:127:0"
+            },
+            "returnParameters": {
+              "id": 67,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1073:0:0"
+            },
+            "scope": 150,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "id": 133,
+            "nodeType": "FunctionDefinition",
+            "src": "2017:82:0",
+            "body": {
+              "id": 132,
+              "nodeType": "Block",
+              "src": "2076:23:0",
+              "statements": []
+            },
+            "functionSelector": "ffca61b2",
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "apostar",
+            "nameLocation": "2026:7:0",
+            "parameters": {
+              "id": 130,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 127,
+                  "mutability": "mutable",
+                  "name": "cantidad",
+                  "nameLocation": "2042:8:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 133,
+                  "src": "2034:16:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 126,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2034:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 129,
+                  "mutability": "mutable",
+                  "name": "juegoId",
+                  "nameLocation": "2060:7:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 133,
+                  "src": "2052:15:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 128,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2052:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2033:35:0"
+            },
+            "returnParameters": {
+              "id": 131,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2076:0:0"
+            },
+            "scope": 150,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "id": 149,
+            "nodeType": "FunctionDefinition",
+            "src": "2105:124:0",
+            "body": {
+              "id": 148,
+              "nodeType": "Block",
+              "src": "2177:52:0",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "arguments": [
+                          {
+                            "id": 144,
+                            "name": "juego",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 136,
+                            "src": "2215:5:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_Juego_$34_memory_ptr",
+                              "typeString": "struct LigaDeFutbol.Juego memory"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_struct$_Juego_$34_memory_ptr",
+                              "typeString": "struct LigaDeFutbol.Juego memory"
+                            }
+                          ],
+                          "expression": {
+                            "id": 142,
+                            "name": "abi",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": -1,
+                            "src": "2204:3:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_abi",
+                              "typeString": "abi"
+                            }
+                          },
+                          "id": 143,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "memberName": "encode",
+                          "nodeType": "MemberAccess",
+                          "src": "2204:10:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_abiencode_pure$__$returns$_t_bytes_memory_ptr_$",
+                            "typeString": "function () pure returns (bytes memory)"
+                          }
+                        },
+                        "id": 145,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "2204:17:0",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes_memory_ptr",
+                          "typeString": "bytes memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bytes_memory_ptr",
+                          "typeString": "bytes memory"
+                        }
+                      ],
+                      "id": 141,
+                      "name": "keccak256",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": -8,
+                      "src": "2194:9:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_keccak256_pure$_t_bytes_memory_ptr_$returns$_t_bytes32_$",
+                        "typeString": "function (bytes memory) pure returns (bytes32)"
+                      }
+                    },
+                    "id": 146,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2194:28:0",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "functionReturnParameters": 140,
+                  "id": 147,
+                  "nodeType": "Return",
+                  "src": "2187:35:0"
+                }
+              ]
+            },
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "_crearId",
+            "nameLocation": "2114:8:0",
+            "parameters": {
+              "id": 137,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 136,
+                  "mutability": "mutable",
+                  "name": "juego",
+                  "nameLocation": "2136:5:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 149,
+                  "src": "2123:18:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_Juego_$34_memory_ptr",
+                    "typeString": "struct LigaDeFutbol.Juego"
+                  },
+                  "typeName": {
+                    "id": 135,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 134,
+                      "name": "Juego",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 34,
+                      "src": "2123:5:0"
+                    },
+                    "referencedDeclaration": 34,
+                    "src": "2123:5:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Juego_$34_storage_ptr",
+                      "typeString": "struct LigaDeFutbol.Juego"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2122:20:0"
+            },
+            "returnParameters": {
+              "id": 140,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 139,
+                  "mutability": "mutable",
+                  "name": "id",
+                  "nameLocation": "2173:2:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 149,
+                  "src": "2165:10:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 138,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2165:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2164:12:0"
+            },
+            "scope": 150,
+            "stateMutability": "pure",
+            "virtual": false,
+            "visibility": "internal"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "LigaDeFutbol",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "linearizedBaseContracts": [
+          150
+        ],
+        "name": "LigaDeFutbol",
+        "nameLocation": "73:12:0",
+        "scope": 151,
+        "usedErrors": []
+      }
+    ],
+    "license": "UNLICENSED"
+  },
+  "id": 0
+}
