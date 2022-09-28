@@ -1,1 +1,21 @@
+# General
+yarn-error.log
 node_modules
+.DS_STORE
+
+# Foundry files
+cache
+out
+
+# Config files
+.env
+
+# Avoid ignoring gitkeep
+!/**/.gitkeep
+
+broadcast
+# Keep the latest deployment only
+#!broadcast/*/*/run-latest.json
+
+sdk
+.local
